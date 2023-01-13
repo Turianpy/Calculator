@@ -1,0 +1,135 @@
+/* Reset */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    color-scheme: dark light;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+img, picture, svg, video {  
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select {
+    font: inherit;
+}
+
+/* Reset */
+
+html {
+    background-color: rgb(204, 238, 248);
+}
+
+main,
+.wrapper{
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-flex {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(19, 19, 19);
+    border-radius: 5%;
+    border: 0.125rem solid gray;
+    box-shadow: 0 0 1rem black;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 0.2rem;
+    min-height: 25vh;
+    max-width: 30vw;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.button-grid div {
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 25%;
+    color: rgb(133, 194, 212);
+    padding: 0.7rem;
+}
+
+#top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#screen {
+    min-height: 20vh;
+    border: 2px solid gray;
+    width: 100%;
+    border-radius: 5%;
+}
+
+#clear {
+    background-color: rgba(129, 0, 0, 0.425);
+    color: white;
+}
+
+div.sign {
+    color: rgb(187, 167, 54)
+}
+
+div.sign#plus {
+    font-size: 2rem;
+    line-height: 110%;
+    padding: 0.3rem;
+}
+
+div.number#changesign {
+    background-color: rgba(39, 65, 180, 0.301);
+    color: rgba(255, 255, 255, 0.849)
+}
+
+div.special {
+    background-color: rgba(20, 83, 20, 0.301);
+    color: white;
+}
+
+.sign#equals {
+    background-color: rgba(187, 167, 54, 0.384);
+    color: white;
+    padding: 0.3rem;
+    font-size: 2rem;
+    line-height: 110%;
+}
+
+
+
