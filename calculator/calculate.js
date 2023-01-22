@@ -75,7 +75,7 @@ function operate(operator, n1, n2) {
     else return NaN
 }
 
-function convertPercent(operand) {
+function toFloat(operand) {
     if (!(typeof operand === 'string')) return parseFloat(operand)
     if (!operand.endsWith('%')) {
         return parseFloat(operand)
@@ -99,8 +99,8 @@ export function evaluateInfix(infix) {
             stack.push(item)
         }
         else if (isOperator(item)) {
-            operand2 = convertPercent(stack.pop())
-            operand1 = convertPercent(stack.pop())
+            operand2 = toFloat(stack.pop())
+            operand1 = toFloat(stack.pop())
             stack.push(operate(item, operand1, operand2))
         }
     }

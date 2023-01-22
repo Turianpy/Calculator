@@ -90,7 +90,3 @@ equalsBtn.addEventListener('click', () => {
     mainexp.textContent = evaluation.textContent
     evaluation.textContent = ""
 })
-
-window.mainexp = mainexp
-window.evaluateInfix = evaluateInfix
-window.toPostfix = toPostfix
