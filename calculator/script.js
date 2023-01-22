@@ -1,3 +1,5 @@
+import {evaluateInfix, toPostfix} from "./calculate.js"
+
 const clearBtn = document.getElementById('clear')
 const bracketsBtn = document.getElementById('brackets')
 const percentBtn = document.getElementById('percent')
@@ -23,14 +25,15 @@ const buttonGrid = document.querySelector('.button-grid')
 const numbers = buttonGrid.querySelectorAll('.number')
 const signs = buttonGrid.querySelectorAll('.sign')
 
-let mainexp = document.getElementById('screen-main')
-let evaluation = document.getElementById('screen-preview')
-let curOperand = ""
+var mainexp = document.getElementById('screen-main')
+var evaluation = document.getElementById('screen-preview')
+var curOperand = ""
 
 numbers.forEach((n) => {
     n.addEventListener('click', () => {
         mainexp.textContent += n.dataset.val
         curOperand += n.dataset.val
+        evaluation.textContent = evaluateInfix(mainexp.textContent)
     })
 })
 
@@ -38,7 +41,15 @@ signs.forEach((s) => {
     s.addEventListener('click', () => {
         mainexp.textContent += s.dataset.val
         curOperand = ""
+        evaluation.textContent = evaluateInfix(mainexp.textContent)
     })
+})
+
+percentBtn.addEventListener('click', () => {
+    if (mainexp.textContent.endsWith('%')) return
+    mainexp.textContent += percentBtn.dataset.val
+    curOperand = ""
+    evaluation.textContent = evaluateInfix(mainexp.textContent)
 })
 
 function brackets(str) {
@@ -74,3 +85,12 @@ function clear() {
 clearBtn.addEventListener('click', () => {
     clear()
 })
+
+equalsBtn.addEventListener('click', () => {
+    mainexp.textContent = evaluation.textContent
+    evaluation.textContent = ""
+})
+
+window.mainexp = mainexp
+window.evaluateInfix = evaluateInfix
+window.toPostfix = toPostfix
