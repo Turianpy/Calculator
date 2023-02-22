@@ -1,6 +1,6 @@
 import Stack from "./stack.js"
 
-const PRECEDENCE = {
+export const PRECEDENCE = {
     '+': 1,
     '-': 1,
     '*': 2,
